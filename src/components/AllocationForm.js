@@ -10,6 +10,14 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
 
+        const enteredValue = Number(cost);
+
+        // check if the entered value is a number
+        if (Number.isNaN(enteredValue)) {
+          alert('Please enter a valid number.');
+          return;
+        }
+
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
                 setCost("");
